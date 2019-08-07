@@ -68,8 +68,9 @@ class PapersController < ApplicationController
 
   def by_language
     @papers = Paper.search(params['language'], fields: [:languages],
-                :page => params[:page],
-                :per_page => 10
+                page: params[:page],
+                per_page: 10,
+                order: { published_at: :desc, _score: :desc }
               )
 
     @filtering = true

@@ -17,6 +17,7 @@ FactoryBot.define do
     factory :accepted_paper do
       metadata {{ 'paper' => { 'languages' => ['Ruby', 'Rust']}}}
       state 'accepted'
+      accepted_at  { Time.now }
     end
 
     factory :submitted_paper do
